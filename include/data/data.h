@@ -64,7 +64,6 @@
 #define ARCHI_NB_PE ARCHI_CLUSTER_NB_PE
 #endif
 
-
 #include "alloc.h"
 
 
