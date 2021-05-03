@@ -245,6 +245,12 @@ $(TARGET_BUILD_DIR)/stdout:
 $(TARGET_BUILD_DIR)/fs:
 	mkdir -p $@
 
+
+run: $(TARGET_BUILD_DIR)/modelsim.ini  $(TARGET_BUILD_DIR)/boot $(TARGET_BUILD_DIR)/tcl_files $(TARGET_BUILD_DIR)/waves
+	$(PULPRT_HOME)/bin/stim_utils.py --binary=$(TARGETS) --vectors=$(TARGET_BUILD_DIR)/vectors/stim.txt
+	$(PULPRT_HOME)/bin/plp_mkflash  --flash-boot-binary=$(TARGETS)  --stimuli=$(TARGET_BUILD_DIR)/vectors/qspi_stim.slm --flash-type=spi --qpi
+	$(PULPRT_HOME)/bin/slm_hyper.py  --input=$(TARGET_BUILD_DIR)/vectors/qspi_stim.slm  --output=$(TARGET_BUILD_DIR)/vectors/hyper_stim.slm
+
 run: $(TARGET_BUILD_DIR)/modelsim.ini  $(TARGET_BUILD_DIR)/boot $(TARGET_BUILD_DIR)/tcl_files \
 	$(TARGET_BUILD_DIR)/stdout $(TARGET_BUILD_DIR)/fs $(TARGET_BUILD_DIR)/waves
 	$(PULPRT_HOME)/bin/stim_utils.py --binary=$(TARGETS) --vectors=$(TARGET_BUILD_DIR)/vectors/stim.txt
@@ -253,9 +259,13 @@ ifndef VSIM_PATH
 	'source $$YOUR_HW_DIR/setup/vsim.sh' or set it manually.")
 endif
 ifdef gui
-	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -gLOAD_L2=JTAG -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && export VOPT_ACC_ENA="YES" && vsim -64 -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; '
+	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && export VOPT_ACC_ENA="YES" && vsim -64 -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; '
+else ifdef spiboot
+	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -gSTIM_FROM=SPI_FLASH -gLOAD_L2=STANDALONE -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && vsim -64 -c -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; run_and_exit;'
+else ifdef hyperboot
+	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -gSTIM_FROM=HYPER_FLASH -gLOAD_L2=STANDALONE -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && vsim -64 -c -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; run_and_exit;'
 else
-	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -gLOAD_L2=JTAG -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && vsim -64 -c -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; run_and_exit;'
+	cd $(TARGET_BUILD_DIR) && export VSIM_RUNNER_FLAGS="+ENTRY_POINT=0x1c008080 -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200" && vsim -64 -c -do 'source $(VSIM_PATH)/tcl_files/config/run_and_exit.tcl' -do 'source $(VSIM_PATH)/tcl_files/run.tcl; run_and_exit;'
 endif
 
 endif
