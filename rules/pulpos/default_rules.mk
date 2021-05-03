@@ -163,6 +163,9 @@ endif
 else
 vsim_flags += -gLOAD_L2=JTAG
 endif
+ifdef vsim_additional_flags
+vsim_flags += $(vsim_additional_flags)
+endif
 
 
 #
