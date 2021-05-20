@@ -276,9 +276,11 @@ $(TARGET_BUILD_DIR)/fs:
 
 
 run: $(TARGET_BUILD_DIR)/modelsim.ini  $(TARGET_BUILD_DIR)/boot $(TARGET_BUILD_DIR)/tcl_files $(TARGET_BUILD_DIR)/stdout $(TARGET_BUILD_DIR)/fs $(TARGET_BUILD_DIR)/waves
+ifndef SKIP_STIM_GENERATION
 	$(PULPRT_HOME)/bin/stim_utils.py --binary=$(TARGETS) --vectors=$(TARGET_BUILD_DIR)/vectors/stim.txt
 	$(PULPRT_HOME)/bin/plp_mkflash  --flash-boot-binary=$(TARGETS)  --stimuli=$(TARGET_BUILD_DIR)/vectors/qspi_stim.slm --flash-type=spi --qpi
 	$(PULPRT_HOME)/bin/slm_hyper.py  --input=$(TARGET_BUILD_DIR)/vectors/qspi_stim.slm  --output=$(TARGET_BUILD_DIR)/vectors/hyper_stim.slm
+endif
 ifndef VSIM_PATH
 	$(error "VSIM_PATH is undefined. Either call \
 	'source $$YOUR_HW_DIR/setup/vsim.sh' or set it manually.")
