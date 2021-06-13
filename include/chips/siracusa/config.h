@@ -23,6 +23,6 @@
 #define PULP_CHIP_FAMILY CHIP_PULP
 #define CONFIG_PULPISSIMO 1
 #define PULP_CHIP_STR siracusa
-#define PULP_CHIP_FAMILY_STR pulp
+#define PULP_CHIP_FAMILY_STR siracusa
 
 #endif

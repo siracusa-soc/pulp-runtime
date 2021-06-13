@@ -44,8 +44,7 @@ soc_eu/version=2
 
 
 # FLL
-PULP_SRCS     += kernel/fll-v$(fll/version).c
-PULP_SRCS     += kernel/freq-domains.c
+PULP_SRCS     += kernel/chips/siracusa/pll.c
 PULP_SRCS     += kernel/chips/siracusa/soc.c
 
 
