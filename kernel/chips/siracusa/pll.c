@@ -52,10 +52,10 @@ pll_t pll_get_handle(pll_clock_domain_e clock_domain) {
  */
 __attribute__((noinline)) static int pll_calc_freq_div_settings(uint32_t target_freq_hz, uint16_t* mult, uint8_t* postdiv, uint8_t* vco_div2_enable) {
   uint32_t temp_mult;
-  printf("Calculating settings for target freq: %d\n", target_freq_hz);
+  //printf("Calculating settings for target freq: %d\n", target_freq_hz);
   for (int temp_div = 32; temp_div > 16; temp_div-=2) {
     temp_mult = target_freq_hz/PLL_REF_CLK_FREQ_HZ * temp_div;
-    printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
+    //printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
     if (temp_mult > PLL_MIN_VCO_MULT && temp_mult < PLL_MAX_VCO_MULT) {
       *mult = temp_mult;
       *postdiv = temp_div/2-1;
@@ -65,7 +65,7 @@ __attribute__((noinline)) static int pll_calc_freq_div_settings(uint32_t target_
   }
   for (int temp_div = 16; temp_div > 0; temp_div--) {
     temp_mult = target_freq_hz/PLL_REF_CLK_FREQ_HZ * temp_div;
-    printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
+    //printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
     if (temp_mult > PLL_MIN_VCO_MULT && temp_mult < PLL_MAX_VCO_MULT) {
       *mult = temp_mult;
       *postdiv = temp_div-1;
@@ -73,7 +73,7 @@ __attribute__((noinline)) static int pll_calc_freq_div_settings(uint32_t target_
       return 0;
     }
   }
-  printf("Failed to generate frequency of %d Hz\n", target_freq_hz);
+  //printf("Runtime failed to generate frequency of %d Hz\n", target_freq_hz);
   return -1;
 }
 
@@ -89,10 +89,10 @@ __attribute__((noinline)) static int pll_calc_freq_div_settings(uint32_t target_
  */
 __attribute__((noinline)) static int pll_calc_freq_div_settings_lp(uint32_t target_freq_hz, uint16_t* mult, uint8_t* postdiv, uint8_t* vco_div2_enable) {
   uint32_t temp_mult;
-  printf("Calculating settings for target freq: %d\n", target_freq_hz);
+  //printf("Calculating settings for target freq: %d\n", target_freq_hz);
   for (int temp_div = 1; temp_div < 16; temp_div++) {
     temp_mult = target_freq_hz/PLL_REF_CLK_FREQ_HZ * temp_div;
-    printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
+    //printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
     if (temp_mult > PLL_MIN_VCO_MULT && temp_mult < PLL_MAX_VCO_MULT) {
       *mult = temp_mult;
       *postdiv = temp_div-1;
@@ -102,7 +102,7 @@ __attribute__((noinline)) static int pll_calc_freq_div_settings_lp(uint32_t targ
   }
   for (int temp_div = 16; temp_div <= 32; temp_div+=2) {
     temp_mult = target_freq_hz/PLL_REF_CLK_FREQ_HZ * temp_div;
-    printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
+    //printf("Temp mult: %d, temp_div: %d\n", temp_mult, temp_div);
     if (temp_mult > PLL_MIN_VCO_MULT && temp_mult < PLL_MAX_VCO_MULT) {
       *mult = temp_mult;
       *postdiv = temp_div/2-1;
@@ -110,7 +110,7 @@ __attribute__((noinline)) static int pll_calc_freq_div_settings_lp(uint32_t targ
       return 0;
     }
   }
-  printf("Failed to generate frequency of %d Hz\n", target_freq_hz);
+  //printf("Failed to generate frequency of %d Hz\n", target_freq_hz);
   return -1;
 }
 
@@ -212,15 +212,15 @@ unsigned int pos_fll_init(int fll) {
   switch (fll) {
   case POS_FLL_FC:
     handle = pll_get_handle(PLL_SOC_DOMAIN);
-    printf("Init soc clock. Base addr: %x\n", handle.base_addr);
+    //printf("Init soc clock. Base addr: %x\n", handle.base_addr);
     break;
   case POS_FLL_CL:
     handle = pll_get_handle(PLL_CLUSTER_DOMAIN);
-    printf("Init cluster clock. Base addr: %x\n", handle.base_addr);
+    //printf("Init cluster clock. Base addr: %x\n", handle.base_addr);
     break;
   case POS_FLL_PERIPH:
     handle = pll_get_handle(PLL_PER_DOMAIN);
-    printf("Init peripheral clock. Base addr: %x\n", handle.base_addr);
+    //printf("Init peripheral clock. Base addr: %x\n", handle.base_addr);
     break;
   }
   return pll_init(&handle);
