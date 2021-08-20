@@ -28,6 +28,7 @@
 #include <hal/pulp.h>
 #include <data/data.h>
 #include <common/bitfield.h>
+#include <i3c_obj_if.h>
 
 typedef enum {
   PI_FREQ_DOMAIN_FC     = 0,

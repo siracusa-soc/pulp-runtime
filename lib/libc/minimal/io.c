@@ -369,7 +369,13 @@ void abort()
     exit(-1);
 }
 
-
+void __assert_func(const char *file,
+                   int line,
+                   const char *func,
+                   const char *failedexpr) {
+  printf("ASSERTION Failure: expr=%s at %s:%d\n", failedexpr, file, line);
+  abort();
+}
 
 int pos_io_start()
 {

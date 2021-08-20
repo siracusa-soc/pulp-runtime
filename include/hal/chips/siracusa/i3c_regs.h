@@ -9,17 +9,49 @@ extern "C" {
 // Register width
 #define I3C_CONFIG_PARAM_REG_WIDTH 32
 
-// Change the I3C device role and perform software reset of the whole IP
-#define I3C_CONFIG_MODERST_REG_OFFSET 0x0
-#define I3C_CONFIG_MODERST_GLOBRST_BIT 0
-#define I3C_CONFIG_MODERST_LOCRST_BIT 1
+// Perform software reset of the whole IP
+#define I3C_CONFIG_SWRST_REG_OFFSET 0x0
+#define I3C_CONFIG_SWRST_GLOBRST_BIT 0
+#define I3C_CONFIG_SWRST_LOCRST_BIT 1
 
-// Configure Device Role and reset duration
+// Configure static device configuration. Any change to this register (except
+// for RSTCYCLES) requires reseting the I3C peripheral
 #define I3C_CONFIG_CFG1_REG_OFFSET 0x4
 #define I3C_CONFIG_CFG1_RSTCYCLES_MASK 0xff
 #define I3C_CONFIG_CFG1_RSTCYCLES_OFFSET 0
 #define I3C_CONFIG_CFG1_RSTCYCLES_FIELD \
   ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG1_RSTCYCLES_MASK, .index = I3C_CONFIG_CFG1_RSTCYCLES_OFFSET })
+#define I3C_CONFIG_CFG1_DEVICE_ROLE_BIT 8
+#define I3C_CONFIG_CFG1_PID_MFR_MASK 0x7fff
+#define I3C_CONFIG_CFG1_PID_MFR_OFFSET 9
+#define I3C_CONFIG_CFG1_PID_MFR_FIELD \
+  ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG1_PID_MFR_MASK, .index = I3C_CONFIG_CFG1_PID_MFR_OFFSET })
+#define I3C_CONFIG_CFG1_PID_INST_ID_MASK 0xf
+#define I3C_CONFIG_CFG1_PID_INST_ID_OFFSET 24
+#define I3C_CONFIG_CFG1_PID_INST_ID_FIELD \
+  ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG1_PID_INST_ID_MASK, .index = I3C_CONFIG_CFG1_PID_INST_ID_OFFSET })
+
+// Configure static device configuration. Any change to this register (except
+// for RSTCYCLES) requires reseting the I3C peripheral
+#define I3C_CONFIG_CFG2_REG_OFFSET 0x8
+#define I3C_CONFIG_CFG2_BUS_AVAIL_TIMER_MASK 0xff
+#define I3C_CONFIG_CFG2_BUS_AVAIL_TIMER_OFFSET 0
+#define I3C_CONFIG_CFG2_BUS_AVAIL_TIMER_FIELD \
+  ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG2_BUS_AVAIL_TIMER_MASK, .index = I3C_CONFIG_CFG2_BUS_AVAIL_TIMER_OFFSET })
+#define I3C_CONFIG_CFG2_BUS_IDLE_TIMER_MASK 0x3ffff
+#define I3C_CONFIG_CFG2_BUS_IDLE_TIMER_OFFSET 8
+#define I3C_CONFIG_CFG2_BUS_IDLE_TIMER_FIELD \
+  ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG2_BUS_IDLE_TIMER_MASK, .index = I3C_CONFIG_CFG2_BUS_IDLE_TIMER_OFFSET })
+
+// Put the peripheral in low power mode disabling the internal clock. A
+// wakeup interrupt will be triggered if an i3c slave issues in-band-
+// interrupt (IBI).
+#define I3C_CONFIG_LOW_PWR_EN_REG_OFFSET 0xc
+#define I3C_CONFIG_LOW_PWR_EN_LOW_PWR_EN_BIT 0
+
+// Active-safety feature configuration
+#define I3C_CONFIG_ASF_CFG_REG_OFFSET 0x10
+#define I3C_CONFIG_ASF_CFG_ASF_PASSTHROUGH_EN_BIT 0
 
 #ifdef __cplusplus
 }  // extern "C"

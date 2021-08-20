@@ -12,7 +12,7 @@ PULP_ARCH_LDFLAGS ?=  -march=rv32imcxgap9
 PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imcxgap9
 endif
 
-PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/siracusa/config.h -I$(PULPRT_HOME)/include/chips/siracusa
+PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/siracusa/config.h -I$(PULPRT_HOME)/include/chips/siracusa -I$(PULPRT_HOME)/drivers/i3c/include -I$(PULPRT_HOME)/drivers/siracusa_padmux/include
 PULP_OMP_CFLAGS    += -fopenmp -mnativeomp
 PULP_LDFLAGS += -nostartfiles -nostdlib -Wl,--gc-sections -L$(PULPRT_HOME)/kernel -Tchips/pulp/link.ld -lgcc
 
@@ -46,6 +46,15 @@ soc_eu/version=2
 # FLL
 PULP_SRCS     += kernel/chips/siracusa/pll.c
 PULP_SRCS     += kernel/chips/siracusa/soc.c
+
+# I3C driver
+PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/cdn_print.c
+PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/command_list.c
+PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/i3c.c
+PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/i3c_obj_if.c
+PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/cps_impl.c
+
+# Padmultiplexing
 
 
 include $(PULPRT_HOME)/rules/pulpos/configs/default.mk

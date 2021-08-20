@@ -42,4 +42,6 @@
 #include "hal/chips/siracusa/pll_regs.h"
 #include "hal/chips/siracusa/pll.h"
 
+#include "hal/chips/siracusa/i3c_regs.h"
+
 #endif
