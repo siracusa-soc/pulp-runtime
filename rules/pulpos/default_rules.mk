@@ -157,7 +157,11 @@ else
 ifeq ($(bootmode), jtag)
 vsim_flags += -gLOAD_L2=JTAG
 else
+ifeq ($(bootmode), mram)
+vsim_flags += -gLOAD_L2=MRAM
+else
 $(error Illegal value supplied for bootmode. Legal values are 'spi', 'hyperflash', 'fast_debug' and 'jtag')
+endif
 endif
 endif
 endif
