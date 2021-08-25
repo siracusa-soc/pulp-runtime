@@ -55,7 +55,7 @@ PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/i3c_obj_if.c
 PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/cps_impl.c
 
 # Padmultiplexing
-
+PULP_SRCS     += $(PULPRT_HOME)/drivers/siracusa_padmux/src/siracusa_padctrl.c
 
 include $(PULPRT_HOME)/rules/pulpos/configs/default.mk
 
