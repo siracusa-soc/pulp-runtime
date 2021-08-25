@@ -153,6 +153,7 @@ vsim_flags += -gSTIM_FROM=HYPER_FLASH -gLOAD_L2=STANDALONE -gUSE_HYPER_MODELS=1
 else
 ifeq ($(bootmode), fast_debug)
 vsim_flags += -gLOAD_L2=FAST_DEBUG_PRELOAD
+vsim_flags += +USER_CONTROLLED_LBPLL_LOCK_TIME=2
 else
 ifeq ($(bootmode), jtag)
 vsim_flags += -gLOAD_L2=JTAG
