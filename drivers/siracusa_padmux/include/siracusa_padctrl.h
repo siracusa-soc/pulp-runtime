@@ -67,7 +67,6 @@ typedef struct {
   siracusa_padctrl_drv_strength_e drv_str; ///< Driving strength of the pad
   siracusa_padctrl_pull_cfg_e pull_cfg; ///< Pull-up/down settings of the pad
   uint8_t ret_en; ///< Retention mode enable
-  uint8_t rx_en; ///< Rx enable
   uint8_t tx_en; ///< Tx enable
   uint8_t shm_trigg_en; ///< Schmitt-trigger enable
 } siracusa_padctrl_cfg_t;

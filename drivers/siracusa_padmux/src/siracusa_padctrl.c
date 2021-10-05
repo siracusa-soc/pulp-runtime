@@ -27,7 +27,6 @@ void padctrl_config_set(siracusa_padctrl_pad_e pad, siracusa_padctrl_cfg_t const
   const bitfield_field32_t drv_str_field = {.mask = 0xf, .index = SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_DRV0_BIT};
   const uint32_t cfg_addr = ARCHI_PADCTRL_ADDR + pad*SIRACUSA_PADCTRL_PAD_REG_SEPARATION + SIRACUSA_PADCTRL_PAD_CFG_REG_OFFSET;
   uint32_t reg = pulp_read32(cfg_addr);
-  reg = bitfield_bit32_write(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_RX_EN_BIT, cfg->rx_en != 0);
   reg = bitfield_bit32_write(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_TX_EN_BIT, cfg->tx_en != 0);
   reg = bitfield_bit32_write(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_PULL_EN_BIT, cfg->pull_cfg != NO_PULL);
   reg = bitfield_bit32_write(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_PULL_SEL_BIT, cfg->pull_cfg == PULL_UP_EN);
@@ -44,7 +43,6 @@ void padctrl_config_get(siracusa_padctrl_pad_e pad, siracusa_padctrl_cfg_t *cfg)
   uint8_t pull_en;
   uint8_t pull_sel;
   cfg->drv_str = bitfield_field32_read(reg, drv_str_field);
-  cfg->rx_en = bitfield_bit32_read(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_RX_EN_BIT);
   cfg->tx_en = bitfield_bit32_read(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_TX_EN_BIT);
   cfg->shm_trigg_en = bitfield_bit32_read(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_ST_EN_BIT);
   cfg->ret_en = bitfield_bit32_read(reg, SIRACUSA_PADS_FUNCTIONAL_CONFIG_PAD_GPIO00_CFG_RET_EN_BIT);

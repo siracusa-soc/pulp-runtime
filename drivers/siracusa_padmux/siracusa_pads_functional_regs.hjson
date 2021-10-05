@@ -123,16 +123,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -142,7 +132,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -288,16 +278,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -307,7 +287,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -453,16 +433,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -472,7 +442,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -618,16 +588,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -637,7 +597,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -783,16 +743,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -802,7 +752,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -948,16 +898,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -967,7 +907,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1113,16 +1053,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1132,7 +1062,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1278,16 +1208,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1297,7 +1217,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1443,16 +1363,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1462,7 +1372,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1608,16 +1518,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1627,7 +1527,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1773,16 +1673,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1792,7 +1682,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -1938,16 +1828,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -1957,7 +1837,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2103,16 +1983,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2122,7 +1992,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2268,16 +2138,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2287,7 +2147,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2433,16 +2293,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2452,7 +2302,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2598,16 +2448,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2617,7 +2457,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2763,16 +2603,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2782,7 +2612,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -2928,16 +2758,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -2947,7 +2767,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3093,16 +2913,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3112,7 +2922,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3258,16 +3068,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3277,7 +3077,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3423,16 +3223,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3442,7 +3232,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3588,16 +3378,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3607,7 +3387,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3753,16 +3533,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3772,7 +3542,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -3918,16 +3688,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -3937,7 +3697,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4083,16 +3843,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4102,7 +3852,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4248,16 +3998,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4267,7 +4007,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4413,16 +4153,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4432,7 +4162,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4578,16 +4308,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4597,7 +4317,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4743,16 +4463,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4762,7 +4472,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -4908,16 +4618,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -4927,7 +4627,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5073,16 +4773,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5092,7 +4782,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5238,16 +4928,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5257,7 +4937,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5403,16 +5083,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5422,7 +5092,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5568,16 +5238,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5587,7 +5247,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5733,16 +5393,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5752,7 +5402,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -5898,16 +5548,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -5917,7 +5557,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6063,16 +5703,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6082,7 +5712,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6228,16 +5858,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6247,7 +5867,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6393,16 +6013,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6412,7 +6022,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6558,16 +6168,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6577,7 +6177,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6723,16 +6323,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6742,7 +6332,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -6888,16 +6478,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -6907,7 +6487,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
@@ -7053,16 +6633,6 @@
             },
             {
                 bits: "8"
-                name: rx_en
-                desc: '''
-                     RX enable, active high
-                '''
-                swaccess: "rw"
-                hwaccess: "hro"
-                resval: "1"
-            },
-            {
-                bits: "9"
                 name: st_en
                 desc: '''
                      Schmitt-trigger enable, active high
@@ -7072,7 +6642,7 @@
                 resval: "0"
             },
             {
-                bits: "10"
+                bits: "9"
                 name: tx_en
                 desc: '''
                      TX driver enable, active low
