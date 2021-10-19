@@ -18,12 +18,10 @@
 
 void pos_soc_init()
 {
-#if __PLATFORM__ != ARCHI_PLATFORM_FPGA
+#if __PLATFORM__ != ARCHI_PLATFORM_FPGA && !defined(SKIP_PLL_INIT)
   pos_freq_domains[PI_FREQ_DOMAIN_FC] = pos_fll_init(POS_FLL_FC);
 
   pos_freq_domains[PI_FREQ_DOMAIN_PERIPH] = pos_fll_init(POS_FLL_PERIPH);
-
-  pos_freq_domains[PI_FREQ_DOMAIN_PERIPH] = pos_fll_set_freq(POS_FLL_PERIPH, 16000000);
 
   pos_freq_domains[PI_FREQ_DOMAIN_CL] = pos_fll_init(POS_FLL_CL);
 
