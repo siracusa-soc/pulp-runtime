@@ -39,7 +39,7 @@
 
 #define ARCHI_SOC_PERIPHERALS_ADDR    0x1A100000
 
-#define ARCHI_FC_TIMER_SIZE                 0x00000800
+#define ARCHI_FC_TIMER_SIZE           0x00000800
 
 
 #define ARCHI_SOC_PLL_OFFSET          0x00000000
