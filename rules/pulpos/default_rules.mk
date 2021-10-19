@@ -143,7 +143,11 @@ endif
 #
 # VSIM Flags
 #
-vsim_flags ?= +ENTRY_POINT=0x1c008080 -dpicpppath /usr/bin/g++ -permit_unmatched_virtual_intf -gBAUDRATE=115200
+MODEL_TECH ?= /usr/pack/questa_vip-2021.3-bt/questa_vip
+ifeq ($(uvm_tb), 1)
+vsim_flags ?= -mvchome $(MODEL_TECH) -suppress vsim-8323 -suppress vsim-8683 -suppress vsim-3009
+else
+vsim_flags ?= +ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200
 ifdef bootmode
 ifeq ($(bootmode), spi)
 vsim_flags += -gSTIM_FROM=SPI_FLASH -gLOAD_L2=STANDALONE -gUSE_S25FS256S_MODEL=1
@@ -170,6 +174,9 @@ endif
 else
 vsim_flags += -gLOAD_L2=JTAG
 endif
+
+endif
+
 ifdef vsim_additional_flags
 vsim_flags += $(vsim_additional_flags)
 endif
@@ -281,8 +288,16 @@ $(TARGET_BUILD_DIR)/stdout:
 $(TARGET_BUILD_DIR)/fs:
 	mkdir -p $@
 
+$(TARGET_BUILD_DIR)/work:
+ifndef VSIM_PATH
+	$(error "VSIM_PATH is undefined. Either call \
+	'source $$YOUR_HW_DIR/setup/vsim.sh' or set it manually.")
+endif
+	ln -s $(VSIM_PATH)/work $@
 
-run: $(TARGET_BUILD_DIR)/modelsim.ini  $(TARGET_BUILD_DIR)/boot $(TARGET_BUILD_DIR)/tcl_files $(TARGET_BUILD_DIR)/stdout $(TARGET_BUILD_DIR)/fs $(TARGET_BUILD_DIR)/waves
+
+
+run: $(TARGET_BUILD_DIR)/modelsim.ini  $(TARGET_BUILD_DIR)/boot $(TARGET_BUILD_DIR)/tcl_files $(TARGET_BUILD_DIR)/stdout $(TARGET_BUILD_DIR)/fs $(TARGET_BUILD_DIR)/waves $(TARGET_BUILD_DIR)/work
 ifndef SKIP_STIM_GENERATION
 	$(PULPRT_HOME)/bin/stim_utils.py --binary=$(TARGETS) --vectors=$(TARGET_BUILD_DIR)/vectors/stim.txt
 	$(PULPRT_HOME)/bin/plp_mkflash  --flash-boot-binary=$(TARGETS)  --stimuli=$(TARGET_BUILD_DIR)/vectors/qspi_stim.slm --flash-type=spi --qpi
