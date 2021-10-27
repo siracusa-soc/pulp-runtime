@@ -226,7 +226,10 @@ static void pos_libc_putc_stdout(char c)
     *(volatile uint32_t *)(long)(ARCHI_STDOUT_ADDR + STDOUT_PUTC_OFFSET + (hal_core_id()<<3) + (hal_cluster_id()<<7)) = c;
 }
 
-
+static void pos_libc_putc_stdout_netlist_compat(char c)
+{
+  *(volatile uint32_t *)(long)(ARCHI_APB_SOC_CTRL_ADDR + 0x20) = c;
+}
 
 #if defined(CONFIG_IO_UART) && CONFIG_IO_UART == 1
 static void pos_libc_putc_uart(char c)
@@ -246,7 +249,8 @@ static void pos_putc(char c)
 #if defined(CONFIG_IO_UART) && CONFIG_IO_UART == 1
     pos_libc_putc_uart(c);
 #else
-    pos_libc_putc_stdout(c);
+    //pos_libc_putc_stdout(c);
+    pos_libc_putc_stdout_netlist_compat(c);
 #endif
 }
 
