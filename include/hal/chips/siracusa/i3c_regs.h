@@ -43,14 +43,8 @@ extern "C" {
 #define I3C_CONFIG_CFG2_BUS_IDLE_TIMER_FIELD \
   ((bitfield_field32_t) { .mask = I3C_CONFIG_CFG2_BUS_IDLE_TIMER_MASK, .index = I3C_CONFIG_CFG2_BUS_IDLE_TIMER_OFFSET })
 
-// Put the peripheral in low power mode disabling the internal clock. A
-// wakeup interrupt will be triggered if an i3c slave issues in-band-
-// interrupt (IBI).
-#define I3C_CONFIG_LOW_PWR_EN_REG_OFFSET 0xc
-#define I3C_CONFIG_LOW_PWR_EN_LOW_PWR_EN_BIT 0
-
 // Active-safety feature configuration
-#define I3C_CONFIG_ASF_CFG_REG_OFFSET 0x10
+#define I3C_CONFIG_ASF_CFG_REG_OFFSET 0xc
 #define I3C_CONFIG_ASF_CFG_ASF_PASSTHROUGH_EN_BIT 0
 
 #ifdef __cplusplus
