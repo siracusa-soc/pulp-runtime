@@ -7,9 +7,9 @@ PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imc
 else
 PULP_LDFLAGS      +=
 PULP_CFLAGS       +=  -D__riscv__
-PULP_ARCH_CFLAGS ?=  -march=rv32imcxgap9
-PULP_ARCH_LDFLAGS ?=  -march=rv32imcxgap9
-PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imcxgap9
+PULP_ARCH_CFLAGS ?=  -march=rv32imc_zfinx_xpulpv3
+PULP_ARCH_LDFLAGS ?=  -march=rv32imc_zfinx_xpulpv3
+PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imc_zfinx_xpulpv3
 endif
 
 PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/siracusa/config.h -I$(PULPRT_HOME)/include/chips/siracusa -I$(PULPRT_HOME)/drivers/i3c/include -I$(PULPRT_HOME)/drivers/siracusa_padmux/include
