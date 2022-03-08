@@ -41,7 +41,7 @@ VPATH = $(PULPRT_HOME)
 include $(PULPRT_HOME)/rules/pulpos/src.mk
 
 PULP_CFLAGS += $(PULPRT_CONFIG_CFLAGS)
-PULP_CFLAGS += -fno-jump-tables -fno-tree-loop-distribute-patterns
+PULP_CFLAGS += -fno-jump-tables -fno-tree-loop-distribute-patterns -Wno-address-of-packed-member
 
 ifeq '$(CONFIG_LIBC_MINIMAL)' '1'
 PULP_APP_CFLAGS += -I$(PULPRT_HOME)/lib/libc/minimal/include
