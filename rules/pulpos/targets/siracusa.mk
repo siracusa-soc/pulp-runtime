@@ -12,7 +12,7 @@ PULP_ARCH_LDFLAGS ?=  -march=rv32imc_zfinx_xpulpv3
 PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imc_zfinx_xpulpv3
 endif
 
-PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/siracusa/config.h -I$(PULPRT_HOME)/include/chips/siracusa -I$(PULPRT_HOME)/drivers/i3c/include -I$(PULPRT_HOME)/drivers/siracusa_padmux/include -I$(PULPRT_HOME)/drivers/gpio/include
+PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/siracusa/config.h -I$(PULPRT_HOME)/include/chips/siracusa -I$(PULPRT_HOME)/drivers/i3c/include -I$(PULPRT_HOME)/drivers/siracusa_padmux/include -I$(PULPRT_HOME)/drivers/siracusa_gpio/include
 PULP_OMP_CFLAGS    += -fopenmp -mnativeomp
 PULP_LDFLAGS += -nostartfiles -nostdlib -Wl,--gc-sections -L$(PULPRT_HOME)/kernel -Tchips/siracusa/link.ld -lgcc
 
@@ -56,7 +56,7 @@ PULP_SRCS     += $(PULPRT_HOME)/drivers/i3c/src/cps_impl.c
 
 # Padmultiplexing
 PULP_SRCS     += $(PULPRT_HOME)/drivers/siracusa_padmux/src/siracusa_padctrl.c
-PULP_SRCS     += $(PULPRT_HOME)/drivers/gpio/gpio.c
+PULP_SRCS     += $(PULPRT_HOME)/drivers/siracusa_gpio/siracusa_gpio.c
 
 include $(PULPRT_HOME)/rules/pulpos/configs/default.mk
 
