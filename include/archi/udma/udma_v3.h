@@ -151,8 +151,8 @@
 
 
 
-#define ARCHI_SOC_EVENT_UDMA_RX(periph)   ((periph)*2)
-#define ARCHI_SOC_EVENT_UDMA_TX(periph)   ((periph)*2 + 1)
+#define ARCHI_SOC_EVENT_UDMA_RX(periph)   ((periph)*4)
+#define ARCHI_SOC_EVENT_UDMA_TX(periph)   ((periph)*4 + 1)
 
 
 

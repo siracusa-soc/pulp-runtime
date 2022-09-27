@@ -133,7 +133,7 @@
 #define UDMA_CPI_CAM_CFG_GLOB_FRAMESLICE_EN_WIDTH                    1
 #define UDMA_CPI_CAM_CFG_GLOB_FRAMESLICE_EN_MASK                     0x80
 
-// Input frame format: - 3'b000: RGB565 - 3'b001: RGB555 - 3'b010: RGB444 - 3'b100: BYPASS_LITEND - 3’b101: BYPASS_BIGEND (access: R/W)
+// Input frame format: - 3'b000: RGB565 - 3'b001: RGB555 - 3'b010: RGB444 - 3'b100: BYPASS_LITEND - 3’b101: BYPASS_BIGEND (access: R/W) - 3'b110: BYPASS_10BITS
 #define UDMA_CPI_CAM_CFG_GLOB_FORMAT_BIT                             8
 #define UDMA_CPI_CAM_CFG_GLOB_FORMAT_WIDTH                           3
 #define UDMA_CPI_CAM_CFG_GLOB_FORMAT_MASK                            0x700
